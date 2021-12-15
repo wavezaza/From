@@ -218,26 +218,32 @@
     $(() => {
         $("#dataSubmit").click(() => {
             var obj = $.parseJSON(`{ 
-                "Idcardnumber": "${$("#cardnumber").val()}", 
-                "Sex":"${$("#sex").val()}", 
-                "FristName": "${$("#fname").val()}", 
-                "LastName": "${$("#lname").val()}", 
-                "Religion": "${$("#religion").val()}", 
-                "HomeNumber":"${$("#address").val()}", 
-                "Village": "${$("#village").val()}", 
-                "Road": "${$("#road").val()}", 
-                "District": "${$("#district").val()}", 
-                "City": "${$("#city").val()}", 
-                "Province": "${$("#province").val()}", 
-                "PostNumber": "${$("#postNumber").val()}", 
-                "HomePhone":"${$("#homePhone").val()}", 
-                "PhoneNumber": "${$("#phoneNumber").val()}", 
-                "MyfavoriteMajer": "${$("#majer").val()}"
+                "personal information": {
+                    "Idcardnumber": "${$("#cardnumber").val()}", 
+                    "Sex":"${$("#sex").val()}", 
+                    "FristName": "${$("#fname").val()}", 
+                    "LastName": "${$("#lname").val()}", 
+                    "Religion": "${$("#religion").val()}",
+                    "MyfavoriteMajer": "${$("#majer").val()}"
+                    },
+                "Address": {
+                    "HomeNumber":"${$("#address").val()}", 
+                    "Village": "${$("#village").val()}", 
+                    "Road": "${$("#road").val()}", 
+                    "District": "${$("#district").val()}", 
+                    "City": "${$("#city").val()}", 
+                    "Province": "${$("#province").val()}", 
+                    "PostNumber": "${$("#postNumber").val()}"
+                },
+                "phoneNumbers":{
+                    "HomePhone":"${$("#homePhone").val()}", 
+                    "PhoneNumber": "${$("#phoneNumber").val()}"
+                }
                 }`);
                 console.log(obj);
 
                 Swal.fire({
-                    title: 'ยินยันข้อมูลเสร็จเรียนร้อย',
+                    title: 'ยืนยันข้อมูลเสร็จเรียนร้อย',
                     width: 600,
                     padding: '3em',
                     color: 'rgb(0, 0, 0)',
